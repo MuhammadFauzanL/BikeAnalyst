@@ -3,8 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-hour_df = pd.read_csv("https://raw.githubusercontent.com/MuhammadFauzanL/bikeAnalyst/main/hour_dataa.csv")
-day_df = pd.read_csv("https://raw.githubusercontent.com/MuhammadFauzanL/bikeAnalyst/main/day_dataFrame.csv")
+hour_df = pd.read_csv("https://raw.githubusercontent.com/MuhammadFauzanL/BikeAnalyst/main/hour_dataa.csv")
+day_df = pd.read_csv("https://raw.githubusercontent.com/MuhammadFauzanL/BikeAnalyst/main/day_dataFrame.csv")
 
 hour_df['hour'] = hour_df['hour'].apply(lambda x: f"{x:02d}:00")
 
