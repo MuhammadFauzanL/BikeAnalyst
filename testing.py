@@ -19,7 +19,7 @@ total_registered = day_df.groupby('day_type')['registered'].sum().reset_index()
 st.title('Analisis Penyewaan Sepeda Dicoding')
 
 st.subheader('Total Penyewaan Sepeda Berdasarkan Cuaca dan Jam')
-fig, ax = plt.subplots(figsize=(12, 6))
+fig, ax = plt.subplots(figsize=(15, 6))
 sns.lineplot(data=total_by_weather_hour, x='hour', y='count', hue='weather_situation', marker='o', ax=ax)
 ax.set_title('Total Penyewaan Sepeda Berdasarkan Cuaca dan Jam')
 ax.set_xlabel('Jam')
@@ -44,14 +44,6 @@ st.pyplot(fig)
 
 st.subheader('Total Penyewaan Sepeda Berdasarkan Hari Kerja dan Akhir Pekan')
 st.write(total_registered)
-
-st.subheader('Distribusi Pendaftaran Sepeda Berdasarkan Hari dalam Seminggu')
-fig, ax = plt.subplots(figsize=(12, 6))
-sns.boxplot(x='weekday', y='registered', data=day_df, palette='coolwarm', ax=ax)
-ax.set_title('Distribusi Pendaftaran Sepeda Berdasarkan Hari dalam Seminggu')
-ax.set_xlabel('Hari dalam Seminggu (0=Minggu, 6=Sabtu)')
-ax.set_ylabel('Jumlah Pendaftaran Sepeda')
-st.pyplot(fig)
 
 st.subheader('Total Pendaftaran Sepeda Berdasarkan Hari Kerja dan Akhir Pekan')
 fig, ax = plt.subplots(figsize=(10, 6))
